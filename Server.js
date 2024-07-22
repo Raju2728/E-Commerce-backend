@@ -44,7 +44,7 @@ async function sendEmailtoClient(email,name){
     \n\n\tIf you are not the user Of our platform avoid this mail
     \n\n\tclick here to Go to Our WebPage:https://rajesh2730.github.io/E-Commerce-React/
     \n\n\t-With Love TrendingMart ❤️`
-  }
+  };
   await transporter.sendMail(mailOption)
 }
 
