@@ -18,10 +18,11 @@ app.use(
 )
 
 const tmdb = mysql.createConnection({
-    host: process.env.DB_HOST || "localhost",
+    host: process.env.DB_HOST || "shuttle.proxy.rlwy.net",
     user: process.env.DB_USER || "root",
-    password: process.env.DB_PASS || "",
-    database: process.env.DB_NAME || "trending_mart"
+    password: process.env.DB_PASS || "VHlZBsiHyGqtwNdBtaNfBVOevsfokRwp",
+    database: process.env.DB_NAME || "railway",
+    port: process.env.DB_PORT || 36896
 })
 
 tmdb.connect(err => {
