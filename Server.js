@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express")
 const cors = require("cors")
 const mysql = require("mysql")
@@ -6,6 +7,7 @@ const nodemailer = require('nodemailer');
 
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json())
 app.use(
@@ -16,10 +18,10 @@ app.use(
 )
 
 const tmdb = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"",
-    database:"trending_mart"
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASS || "",
+    database: process.env.DB_NAME || "trending_mart"
 })
 
 tmdb.connect(err => {
@@ -135,6 +137,6 @@ app.get('/api/user/:id', (req, res) => {
   });
 });
 
-app.listen('7230', () => {
-    console.log("Listening 7230!!....")
-})
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
