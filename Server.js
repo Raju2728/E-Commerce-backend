@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require("express")
 const cors = require("cors")
-const mysql = require("mysql")
+const mysql = require("mysql2")
 const nodemailer = require('nodemailer');
 
 
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json())
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://raju2728.github.io/E-Commerce-React/",
         credentials:true
     })
 )
